@@ -35,22 +35,42 @@ public class FundTransferControllerTest {
 	private FundTransferService fundTransferService;
 
 	@Autowired
+	private AccountsService accountsService;
+
+	@Autowired
 	private WebApplicationContext webApplicationContext;
 
 	@Before
 	public void prepareMockMvc() {
 		this.mockMvc = webAppContextSetup(this.webApplicationContext).build();
 
+		accountsService.getAccountsRepository().clearAccounts();
+
 	}
 
 	// Valid Account to Account transfer test case execution
-		@Test
-		public void validTransferBetweenAccounts() throws Exception {
-			final Account accountFrom = new Account("Axc007", new BigDecimal("400.00"));
-			final Account accountTo = new Account("Axc009");
-			final FundTransfer transfer = new FundTransfer("Axc007", "Axc009", new BigDecimal("200.00"));
+	@Test
+	public void validTransferBetweenAccounts() throws Exception {
+		final Account accountFrom = new Account("Axc007", new BigDecimal("400.00"));
+		final Account accountTo = new Account("Axc009");
+		final FundTransfer transfer = new FundTransfer("Axc007", "Axc009", new BigDecimal("200.00"));
 
-			fundTransferService.fundTransferCheck(accountFrom, accountTo, transfer);
-		}
+		fundTransferService.fundTransferCheck(accountFrom, accountTo, transfer);
+	}
 
+	@Test
+	public void createAccountNoAccountId() throws Exception {
+		this.mockMvc.perform(post("/v1.0/accounts/fundtransfer").contentType(MediaType.APPLICATION_JSON)
+				.content("{\"balance\":1000}")).andExpect(status().isBadRequest());
+	}
+
+	
+	@Test
+	public void performSameAccountTransferException() throws Exception {
+		this.mockMvc
+				.perform(post("/v1.0/accounts/fundtransfer").contentType(MediaType.APPLICATION_JSON)
+						.content("{\"accountFromId\":\"ACC-001\",\"accountToId\":\"ACC-001\",\"balance\":3000}"))
+				.andExpect(status().isBadRequest());
+
+	}
 }
