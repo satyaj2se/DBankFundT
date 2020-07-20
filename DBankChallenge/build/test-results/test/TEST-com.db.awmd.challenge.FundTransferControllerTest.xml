@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.db.awmd.challenge.FundTransferControllerTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2020-07-20T09:44:23" hostname="DESKTOP-TUE12FA" time="0.128">
+  <properties/>
+  <testcase name="createDuplicateAccount" classname="com.db.awmd.challenge.FundTransferControllerTest" time="0.021"/>
+  <testcase name="getAccount" classname="com.db.awmd.challenge.FundTransferControllerTest" time="0.013"/>
+  <testcase name="createAccountNegativeBalance" classname="com.db.awmd.challenge.FundTransferControllerTest" time="0.013"/>
+  <testcase name="createAccountEmptyAccountId" classname="com.db.awmd.challenge.FundTransferControllerTest" time="0.016"/>
+  <testcase name="createAccountNoBody" classname="com.db.awmd.challenge.FundTransferControllerTest" time="0.02"/>
+  <testcase name="createAccount" classname="com.db.awmd.challenge.FundTransferControllerTest" time="0.012"/>
+  <testcase name="createAccountNoAccountId" classname="com.db.awmd.challenge.FundTransferControllerTest" time="0.012"/>
+  <testcase name="createAccountNoBalance" classname="com.db.awmd.challenge.FundTransferControllerTest" time="0.009"/>
+  <system-out><![CDATA[2020-07-20 15:14:23.153  INFO 12236 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.db.awmd.challenge.FundTransferControllerTest], using SpringBootContextLoader
+2020-07-20 15:14:23.153  INFO 12236 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.db.awmd.challenge.FundTransferControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-07-20 15:14:23.153  INFO 12236 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.db.awmd.challenge.FundTransferControllerTest]: FundTransferControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-07-20 15:14:23.161  INFO 12236 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.db.awmd.challenge.DevChallengeApplication for test class com.db.awmd.challenge.FundTransferControllerTest
+2020-07-20 15:14:23.166  INFO 12236 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2020-07-20 15:14:23.166  INFO 12236 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Could not instantiate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+2020-07-20 15:14:23.166  INFO 12236 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Could not instantiate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+2020-07-20 15:14:23.166  INFO 12236 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@511871ad, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5b76d736, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@379d70d5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@65c7caa, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@145bf0d5, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@79f94a0f, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@253e963d, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4062071c, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@bf49a9d, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@386e10de]
+2020-07-20 15:14:23.174  INFO 12236 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2020-07-20 15:14:23.174  INFO 12236 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2020-07-20 15:14:23.182  INFO 12236 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 8 ms
+2020-07-20 15:14:23.182  INFO 12236 --- [    Test worker] c.d.a.challenge.web.AccountsController   : Creating account Account(accountId=Id-123, balance=1000)
+2020-07-20 15:14:23.190  INFO 12236 --- [    Test worker] c.d.a.challenge.web.AccountsController   : Creating account Account(accountId=Id-123, balance=1000)
+2020-07-20 15:14:23.196  INFO 12236 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2020-07-20 15:14:23.196  INFO 12236 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2020-07-20 15:14:23.204  INFO 12236 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 8 ms
+2020-07-20 15:14:23.204  INFO 12236 --- [    Test worker] c.d.a.challenge.web.AccountsController   : Retrieving account for id Id-1595238263204
+2020-07-20 15:14:23.212  INFO 12236 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2020-07-20 15:14:23.212  INFO 12236 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2020-07-20 15:14:23.218  INFO 12236 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 6 ms
+2020-07-20 15:14:23.224  INFO 12236 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2020-07-20 15:14:23.224  INFO 12236 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2020-07-20 15:14:23.232  INFO 12236 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 8 ms
+2020-07-20 15:14:23.245  INFO 12236 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2020-07-20 15:14:23.253  INFO 12236 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2020-07-20 15:14:23.253  INFO 12236 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+2020-07-20 15:14:23.261  WARN 12236 --- [    Test worker] .w.s.m.s.DefaultHandlerExceptionResolver : Failed to read HTTP message: org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<java.lang.Object> com.db.awmd.challenge.web.AccountsController.createAccount(com.db.awmd.challenge.domain.Account)
+2020-07-20 15:14:23.269  INFO 12236 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2020-07-20 15:14:23.269  INFO 12236 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2020-07-20 15:14:23.269  INFO 12236 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 0 ms
+2020-07-20 15:14:23.277  INFO 12236 --- [    Test worker] c.d.a.challenge.web.AccountsController   : Creating account Account(accountId=Id-123, balance=1000)
+2020-07-20 15:14:23.277  INFO 12236 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2020-07-20 15:14:23.277  INFO 12236 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2020-07-20 15:14:23.285  INFO 12236 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 8 ms
+2020-07-20 15:14:23.291  INFO 12236 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2020-07-20 15:14:23.291  INFO 12236 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2020-07-20 15:14:23.300  INFO 12236 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 9 ms
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
