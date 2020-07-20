@@ -30,16 +30,6 @@ public class FundTransferServiceTest {
 		fundTransferService = new FundTransferService(null, notificationService);
 	}
 
-	// Valid Account to Account transfer test case execution
-	@Test
-	public void validTransferBetweenAccounts() throws Exception {
-		final Account accountFrom = new Account("Axc007", new BigDecimal("400.00"));
-		final Account accountTo = new Account("Axc009");
-		final FundTransfer transfer = new FundTransfer("Axc007", "Axc009", new BigDecimal("200.00"));
-
-		fundTransferService.fundTransferCheck(accountFrom, accountTo, transfer);
-	}
-
 	// Not a Valid or null negative test execution
 	@Test
 	public void notValidAccountFoundToTransferException() throws Exception {
@@ -87,7 +77,7 @@ public class FundTransferServiceTest {
 		}
 	}
 
-	// Not in the same account tranfer test case execution
+	// Not in the same account transfer test case execution
 	@Test
 	public void excpetionWhenTransferredBetweenSameAccount() throws Exception {
 		final Account accountFrom = new Account("Axc001", new BigDecimal("2.00"));
