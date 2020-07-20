@@ -46,7 +46,8 @@ public class AccountsRepositoryInMemory implements AccountsRepository {
     we can use the Cuncurrent hashMap method computeIfPresent()
     it ensured the only one object creation would available to multiple thread 
     Execution.So here we do not need to use the synchronized keywords or block
-    Or Lock Class
+    Or Lock Class,however the atomicity of  computeIfAbsent(..) assures that only one new  Object will be created and put into theMap,
+    and it'll be the exact same instance of  Object that will be returned to all threads calling the  getOrCreate function.
    */ 
     private void updateAccount(final UpdateAccount accountUpdate) {
         final String accountId = accountUpdate.getAccountId();
